@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.vanniktech.maven.publish'
 
 android {
     compileSdkVersion project.compile
@@ -7,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion project.min
         targetSdkVersion project.target
-        versionCode codeVersion.toInteger()
-        versionName nameVersion
+        versionCode VERSION_CODE.toInteger()
+        versionName VERSION_NAME
         consumerProguardFiles 'consumer-rules.pro'
     }
     buildTypes {
@@ -23,5 +24,3 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
 }
-
-apply from: "publish.gradle"
